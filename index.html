@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLUM Apps</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #ffffff;
+        }
+        .spinner {
+            width: 36px;
+            height: 36px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #3b82f6;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+    <script>
+        (function() {
+            var lang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+            var targetUrl = "https://flum-apps.pages.dev/en/";
+
+            if (lang.startsWith('ko')) {
+                targetUrl = "https://flum-apps.pages.dev/ko/";
+            } else if (lang.startsWith('ja')) {
+                targetUrl = "https://flum-apps.pages.dev/ja/";
+            }
+
+            window.location.replace(targetUrl);
+        })();
+    </script>
+</head>
+<body>
+    <div class="spinner"></div>
+</body>
+</html>
